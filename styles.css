@@ -1,0 +1,301 @@
+:root {
+  --primary-color: rgb(255 180 166);
+  --on-primary: rgb(102 7 0);
+  --background: rgb(32 14 11);
+  --on-background: rgb(255 218 212);
+  --surface: rgb(46 26 23);
+  --surface-variant: rgb(95 63 57);
+
+  --mdui-color-primary: 255 180 166;
+  --mdui-color-surface-tint: 255 180 166;
+  --mdui-color-on-primary: 102 7 0;
+  --mdui-color-primary-container: 229 29 0;
+  --mdui-color-on-primary-container: 255 255 255;
+  --mdui-color-secondary: 255 180 166;
+  --mdui-color-on-secondary: 102 7 0;
+  --mdui-color-secondary-container: 132 12 0;
+  --mdui-color-on-secondary-container: 255 201 191;
+  --mdui-color-tertiary: 252 187 76;
+  --mdui-color-on-tertiary: 67 44 0;
+  --mdui-color-tertiary-container: 157 107 0;
+  --mdui-color-on-tertiary-container: 255 255 255;
+  --mdui-color-error: 255 180 171;
+  --mdui-color-on-error: 105 0 5;
+  --mdui-color-error-container: 147 0 10;
+  --mdui-color-on-error-container: 255 218 214;
+  --mdui-color-background: 32 14 11;
+  --mdui-color-on-background: 255 218 212;
+  --mdui-color-surface: 32 14 11;
+  --mdui-color-on-surface: 255 218 212;
+  --mdui-color-surface-variant: 95 63 57;
+  --mdui-color-on-surface-variant: 233 188 180;
+  --mdui-color-outline: 175 135 128;
+  --mdui-color-outline-variant: 95 63 57;
+  --mdui-color-shadow: 0 0 0;
+  --mdui-color-scrim: 0 0 0;
+  --mdui-color-inverse-surface: 255 218 212;
+  --mdui-color-inverse-on-surface: 65 43 39;
+  --mdui-color-inverse-primary: 188 22 0;
+  --mdui-color-primary-fixed: 255 218 212;
+  --mdui-color-on-primary-fixed: 63 3 0;
+  --mdui-color-primary-fixed-dim: 255 180 166;
+  --mdui-color-on-primary-fixed-variant: 144 14 0;
+  --mdui-color-secondary-fixed: 255 218 212;
+  --mdui-color-on-secondary-fixed: 63 3 0;
+  --mdui-color-secondary-fixed-dim: 255 180 166;
+  --mdui-color-on-secondary-fixed-variant: 142 18 3;
+  --mdui-color-tertiary-fixed: 255 221 175;
+  --mdui-color-on-tertiary-fixed: 40 24 0;
+  --mdui-color-tertiary-fixed-dim: 252 187 76;
+  --mdui-color-on-tertiary-fixed-variant: 97 64 0;
+  --mdui-color-surface-dim: 32 14 11;
+  --mdui-color-surface-bright: 75 51 47;
+  --mdui-color-surface-container-lowest: 26 9 7;
+  --mdui-color-surface-container-low: 42 22 19;
+  --mdui-color-surface-container: 46 26 23;
+  --mdui-color-surface-container-high: 58 37 33;
+  --mdui-color-surface-container-highest: 70 47 43;
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes clickWave {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 180, 166, 0.7);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(255, 180, 166, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 180, 166, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  min-height: calc(100vh - 100px);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+
+  object-fit: cover;
+  webkit-mask: url("assets/clover.svg");
+  mask-image: url("assets/clover.svg");
+  margin-bottom: 1rem;
+  animation: scaleIn 1s ease 0.5s forwards;
+  opacity: 0;
+}
+
+.section {
+  background-color: rgba(46, 26, 23, 0.7);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: slideInRight 1s ease forwards;
+  opacity: 0;
+}
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: rgba(95, 63, 57, 0.5);
+  border-radius: 30px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid rgba(red, green, blue, 0);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.clickable {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.clickable:active {
+  animation: clickWave 0.6s ease;
+}
+
+.scroll-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease;
+}
+
+.scroll-left.appear {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--surface-variant) 0%, rgba(95, 63, 57, 0.8) 100%);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+
+
+.social-links a:hover {
+  transform: rotate(360deg);
+}
+
+.social-links i {
+  color: var(--on-background);
+  font-size: 1.8rem;
+}
+
+.skills-container {
+
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+
+  animation: slideInRight 1s ease 0.7s forwards;
+  opacity: 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.skill-card {
+  background-color: rgba(95, 63, 57, 0.5);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: scaleIn 1s ease forwards;
+  opacity: 0;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+.skill-card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    margin-top: 13px;
+
+  }
+
+  .kt {
+    margin-top: 71px;
+  }
+}
+
+.kt {
+  margin-top: 11px;
+}
